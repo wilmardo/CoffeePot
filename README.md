@@ -7,12 +7,9 @@ Code for a ESP8266 based coffee machine. Schematics and pictures of the final re
 ### coffeepot
 Contains the PlatformIO project and the platformio.ini file. The platformio.ini should be adjusted for the board you are compiling for. The coffeepot folder contains the following folders:
 
-##### data
-Contains the minified and gzipped HTML, CSS and Javascript files. These are uploaded to the SPIFFS memory of the ESP8266.
-##### lib
-Empty folder which could be used for including libraries.
-##### src
-Contains the C++ logic for the ESP8266 microcontroller.
+#### data: Contains the minified and gzipped HTML, CSS and Javascript files. These are uploaded to the SPIFFS memory of the ESP8266.
+#### lib: Empty folder which could be used for including libraries.
+#### src: Contains the C++ logic for the ESP8266 microcontroller.
 
 ### html
 Contains the original not minified and gzipped HTML, CSS and Javascript files.
