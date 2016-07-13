@@ -346,7 +346,6 @@ void sendRequest(String urlString) {
     CLIENT.print("\r\n");
     CLIENT.print("Accept: */*\r\n");
     CLIENT.print("User-Agent: Mozilla/4.0 (compatible; esp8266 Lua; Windows NT 5.1)\r\n");
-    CLIENT.print("Authorization: Basic YWRtaW46Ym9va3NvdWJv\r\n");
     CLIENT.print("\r\n");
   } else {
     #ifdef DEBUG
