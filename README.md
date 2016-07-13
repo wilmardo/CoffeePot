@@ -1,7 +1,6 @@
 # CoffeePot
 Code for a ESP8266 based coffee machine. Schematics and pictures of the final result will follow soon.
 
-# Initializing the project
 ## Project directory-structure
 
 ### coffeepot
@@ -20,7 +19,7 @@ Contains the original not minified and gzipped HTML, CSS and Javascript files.
 ### images
 Contains the images used in the project. Which I uploaded to Onedrive for everyone to use and are included through the main.js Javascript file. Feel free to
 
-### Getting started
+## Getting started
 1. Open the coffeepot folder in Atom with PlatformIO installed
 2. Edit the platformio.ini to suit your needs
 3. Update the IN and OUT pinvariables, DomoticzIP, SSID, WPA-KEY and the IPAddress
@@ -29,7 +28,7 @@ Contains the images used in the project. Which I uploaded to Onedrive for everyo
 6. Visit the IP address of the ESP8266 and enjoy :)
 
 
-# Credits
+## Credits
 This project was developed in the PlatformIO IDE which can be downloaded here:
 http://platformio.org/platformio-ide
 
