@@ -4,7 +4,7 @@ Code for a ESP8266 based coffee machine. Schematics and pictures of the final re
 ## Project directory-structure
 
 ### coffeepot
-===
+---
 Contains the PlatformIO project and the platformio.ini file. The platformio.ini should be adjusted for the board you are compiling for. The coffeepot folder contains the following folders:
 
 #### data: 
@@ -15,11 +15,11 @@ Empty folder which could be used for including libraries.
 Contains the C++ logic for the ESP8266 microcontroller.
 
 ### html
-===
+---
 Contains the original not minified and gzipped HTML, CSS and Javascript files.
 
 ### images
-===
+---
 Contains the images used in the project. Which I uploaded to Onedrive for everyone to use and are included through the main.js Javascript file. Feel free to
 
 ## Getting started
