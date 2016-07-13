@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="img/png" href="https://3xjz2q.bn1301.livefilestore.com/y3mhHR3gfGZDU6KJfupB_wGGtHETcmB_uzw2K0Y6mGzf6SQ1UOcpapWNrpSQBMwNnqYRTqsNKmQL_dvJkup8uOQP5hgIp4__k_Gc8WtQuY2lEOKWxuCo4ZTX2m0wwdSfrAi-h2XpZU9y2sEdFYzc9fhgJG4q2n6w2qj-8TXub3F7p0">
+    <script src="/vars.js" type="text/javascript"></script>
+    <script src="/main.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>CoffeePot</title>
+  </head>
+  <body>
+    <h1>CoffeePot</h1>
+    <p>Welcome to the implementation of the <a href="https://nl.wikipedia.org/wiki/Hyper_Text_Coffee_Pot_Control_Protocol" target="_blank">Hyper Text Coffee Pot Control Protocol</a></p>
+      <div id="buttons">
+      <button class="button" onclick="cupsOnClick()"><img id="cups" class="buttonImage" src="">
+        <br><h2>CUPS</h2>
+      </button>
+      <button class="button" onclick="strengthOnClick()"><img id="strength" class="buttonImage" src="">
+        <br><h2>STRENGTH</h2>
+      </button>
+      <button class="button" onclick="grinderOnClick()"><img id="grinder" class="buttonImage" src="">
+        <br><h2>GRINDER</h2>
+      </button>
+      <button class="button" onclick="startOnClick()"><img id="start" class="buttonImage" src="https://5hjz2q.bn1301.livefilestore.com/y3mD1zD5W3fcLMr1UggbOGYR8Iux7ci6I92Lv3eRPyT5MrdHKerTBq2I5cF6AepoDzhcdwTpwPkqd2FYn40M6C4SvnllXVFaf57UrGkbtMBvIOrDOOpo1JQXceyLsUV3fuxaCZved5PK2gIlAZO4uI1ZG2-Xb4rykeu5EwZ4YH4US8">
+        <br><h2>START</h2>
+      </button>
+    </div>
+    <div id="coffeeText"></div>
+    <footer>
+    </footer>
+    <!-- load css -->
+    <noscript id="deferred-styles">
+          <link rel="stylesheet" href="/style.css" type='text/css'>
+          <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto' type='text/css'>
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
+  </body>
+</html>

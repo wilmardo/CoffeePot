@@ -1,0 +1,44 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  padding: 10px;
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  flex-grow: 1;
+  margin-right: 35px;
+}
+.imagetint {
+  filter: alpha(opacity=40); /* For IE8 and earlier */
+  opacity: 0.4;
+}
+
+/*RESPONSIVE RULES*/
+@media screen and (min-width:630px) and (max-width: 1000px)  {
+  .button {
+    min-width: 40%;
+    margin: 0;
+    margin-left: 40px;
+    margin-top: 35px;
+  }
+}
+@media screen and (max-width: 629px) {
+  .button {
+    min-width: 100%;
+    margin: 0;
+    margin-top: 35px;
+  }
+}
