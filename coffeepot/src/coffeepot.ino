@@ -4,6 +4,7 @@
 #include <ESP8266HTTPUpdateServer.h>
 #include <ESP8266mDNS.h>
 #include <ESP8266WebServer.h>
+#include <ArduinoOTA.h>
 #include <IPAddress.h>
 #include <FS.h>
 
@@ -15,9 +16,9 @@
    IP is the ipaddress of the arduino
    DOMOTICZIP is the ipaddress of the Domoticz
 */
-const char* SSID = "ssid";
-const char* PASSWORD = "password";
-const char* HOST = "coffeepot";
+const char* SSID = "den Ouden";
+const char* PASSWORD = "wifiw8woord";
+const char* HOST = "CoffeePot";
 IPAddress DOMOTICZIP(192, 168, 1, 215);
 WiFiClient CLIENT;
 ESP8266WebServer SERVER(80);
@@ -67,6 +68,7 @@ void setup() {
     ESP.restart();
   }
 
+  setupArduinoOTA();
   SPIFFS.begin(); //open SPIFFS
   setupWebserver();
 
@@ -96,6 +98,26 @@ void setup() {
   #endif
 }
 
+/*
+ * ArduinoOTA handele
+ */
+void setupArduinoOTA() {
+    //Arduino OTA code
+   ArduinoOTA.setHostname(HOST);
+   ArduinoOTA.onStart([]() {
+   });
+   ArduinoOTA.onEnd([]() {
+   });
+   ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
+   });
+   ArduinoOTA.onError([](ota_error_t error) {
+     if (error == OTA_BEGIN_ERROR) sendLog("Flash Begin Failed");
+     else if (error == OTA_CONNECT_ERROR) sendLog("Flash Connect Failed");
+     else if (error == OTA_RECEIVE_ERROR) sendLog("Flash Receive Failed");
+     else if (error == OTA_END_ERROR) sendLog("Flash End Failed");
+   });
+   ArduinoOTA.begin();
+}
 /*
  * Webserver handles
  */
@@ -141,7 +163,7 @@ void handleMainJs() {
   #ifdef DEBUG
     Serial.println("handleMainJs");
   #endif
-  MAIN_JS = SPIFFS.open("/main.js.gz", "r");
+  MAIN_JS = SPIFFS.open("/main.min.js.gz", "r");
   if(!MAIN_JS) {
     handleNotFound();
     return;
@@ -236,7 +258,7 @@ void setupWebserver() {
   SERVER.on("/", handleRoot);
   SERVER.on("/style.css", handleCss);
   SERVER.on("/vars.js", handleVarsJs);
-  SERVER.on("/main.js", handleMainJs);
+  SERVER.on("/main.min.js", handleMainJs);
 
   SERVER.on("/cups", handleCups);
   SERVER.on("/strength", handleStrength);
@@ -361,5 +383,6 @@ void sendLog(String message) {
 
 /* Main loop */
 void loop() {
+  ArduinoOTA.handle();
   SERVER.handleClient();
 }
